@@ -1,15 +1,17 @@
 version: "3.7"
+
 services:
   app_proxy:
     environment:
-      APP_HOST: paperclip_web_1
+      APP_HOST: $APP_PAPERCLIP_IP
       APP_PORT: 3100
+
   web:
-    image: node:20-alpine
-    working_dir: /app
-    command: sh -c "npm install -g pnpm && git clone https://github.com/paperclipai/paperclip.git . && pnpm install && pnpm build && pnpm start"
-    ports:
-      - "3100:3100"
-    volumes:
-      - ${APP_DATA_DIR}/data:/app/data
+    image: ghcr.io/paperclipai/paperclip:latest
     restart: unless-stopped
+    ports:
+      - "${APP_PAPERCLIP_PORT}:3100"
+    volumes:
+      - "${APP_DATA_DIR}/data:/data"
+    environment:
+      - DATA_DIR=/data
