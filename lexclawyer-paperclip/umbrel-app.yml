@@ -1,0 +1,14 @@
+manifestVersion: 1
+id: lexclawyer-paperclip
+name: Paperclip
+tagline: Open-source orchestration for zero-human companies
+icon: https://raw.githubusercontent.com/paperclipai/paperclip/master/doc/assets/header.png
+category: automation
+version: "1.0"
+port: 3100
+description: Paperclip orchestrates AI agents into a company with org charts, budgets, goals, and governance.
+developer: paperclipai
+website: https://paperclip.ing
+repo: https://github.com/paperclipai/paperclip
+support: https://github.com/paperclipai/paperclip/issues
+releaseNotes: Initial community package.
